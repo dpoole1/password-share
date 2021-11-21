@@ -1,0 +1,35 @@
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'app.js' %}"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Share</title>
+    <script>
+      function copy() {
+        var copyText = document.getElementById("secret-link");
+        navigator.clipboard.writeText(copyText.value);
+        document.getElementById("copy-icon").classList.remove('bi-clipboard');
+        document.getElementById("copy-icon").classList.add('bi-clipboard-check');
+      }
+      </script>
+    {% block css_files %}{% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">Generate Secret</a>
+      {% if request.session.user_id != None %}
+        <a class="navbar-brand" href="/my_vault">My Vault</a>
+        <a class="navbar-brand" href="/sessions/delete">Sign Out</a>
+      {% else %}
+      <a class="navbar-brand" href="/sessions/new">Sign In</a>
+      {% endif %}
+    </nav>
+      {% block content %}{% endblock %}
+  </body>
+</html>

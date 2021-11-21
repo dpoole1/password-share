@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <p class="mt-2">
+        Thank you for generating a message;)
+    </p>
+    
+    <p>
+        Send this link to the recipent
+        Here is your link: <input disabled="true" size=70 id="secret-link" value="{{ request.scheme }}://{{ request.get_host }}{% url 'view_secret' id %}">
+        <i class="bi bi-clipboard" id="copy-icon" onclick="copy()"></i>
+    </p>
+</div>
+
+{% endblock %}
+
+

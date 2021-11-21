@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container col-6">
+        <div class="container m-5 p-5">
+            <h1> Login </h1>
+            <form action="/sessions/create" method="post" class="form">
+                {% csrf_token %}    
+                <div class="form-group">
+                    {{ form }}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input type="submit" value="Submit" class="btn btn-primary mt-3 float-right">
+                        </div>
+                        <div class="col-md-4 float-right mt-3">
+                            <a href="/accounts/new">Create Account</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
