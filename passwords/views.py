@@ -59,7 +59,7 @@ def create_account(request):
          last_name = form.data['last_name'],
          username = form.data['email'],
          password = form.data['password'])
-        return redirect(generated, id=user.id)
+        return redirect("/")
     else:
         form = UserForm()
         return render(request, "passwords/create_account.html", {'form': form})

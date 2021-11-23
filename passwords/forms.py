@@ -10,11 +10,16 @@ class SecretForm(forms.ModelForm):
             'message': forms.TextInput(attrs={'class': 'form-control w-50'})
         }
 
-class UserForm(forms.Form):
-    first_name = forms.CharField(label='First Name')
-    last_name = forms.CharField(label='Last Name')
-    password = forms.CharField(label='Password')
-    email = forms.CharField(label='Email')
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'password', 'email')
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control w-50','required': 'false'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control w-50'}),
+            'email': forms.TextInput(attrs={'class': 'form-control w-50'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control w-50'}),
+        }
 
 class LoginForm(forms.ModelForm):
     class Meta:
