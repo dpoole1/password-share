@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+mh!79!j2ztsusyqd#ywogcb4eta*p0_)@sbdo0f=hd0_(if_b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['solutionstreet-password.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -81,9 +81,11 @@ WSGI_APPLICATION = 'password_share.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'd8i49m86as8dt5',
+        'HOST': 'ec2-34-196-231-34.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'pkzawkltraecpx',
+        'PASSWORD': '90f98a5d10c6b66e94f3ea57de13a6cd47aa89cabcf9a86f62145c8ef5a2c916'
     }
 }
 

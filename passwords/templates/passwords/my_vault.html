@@ -10,8 +10,10 @@
             </tr>
             <tbody>
                 {% for secret in secrets %}
-                    <td> {{secret.name}} </td>
-                    <td> <a href="view/{{secret.id}}">Show</a> </td>
+                    <tr>
+                        <td> {{secret.name}} </td>
+                        <td> <a href="view/{{secret.id}}">Show</a> </td>
+                    </tr>
                  {% endfor %}
             </tbody>
         </table>

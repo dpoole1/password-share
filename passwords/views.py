@@ -101,5 +101,5 @@ class MyVault:
         encMessage = fernet.encrypt(form.data['message'].encode())
         secret = Secret(id=get_random_string(length=32), name="My Vault", message=encMessage.decode('UTF-8'), user_id=user_id, destroy=False)
         secret.save()
-        return redirect(my_vault)
+        return redirect("my_vault")
 
